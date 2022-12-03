@@ -1,0 +1,312 @@
+body {
+  background-color: white;
+}
+
+body h1 {
+  font-size: 56px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin: 75px 0 50px 0;
+}
+
+div h1 {
+  text-align: center;
+}
+
+.navbar {
+  z-index: 3;
+  position: fixed;
+  background-color: rgba(159, 159, 159, 0.45);
+  width: 100%;
+  height: 70px;
+  padding: 0;
+}
+
+.button-list {
+  display: inline;
+  width: calc(50% + 20px);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-list li {
+  color: white;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 24px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 16px 0;
+  list-style-type: none;
+}
+
+.button-list li:hover {
+  background-color: rgb(255, 97, 97, 0.55);
+}
+
+.contact {
+  padding: 12px 32px;
+}
+
+.contact button {
+  background-color: #FF6161;
+  border: none;
+  border-radius: 24px;
+  width: 145px;
+  height: 48px;
+  text-align: center;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  box-shadow: 0 0 4px 0 grey;
+}
+
+.top-page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 30px);
+  background-color: white
+
+}
+
+.top-layer {
+  z-index: 2;
+  position: absolute;
+  width: 50%;
+  height: calc(100vh - 90px);
+  top: 0;
+  left: 0;
+  background-color: #FF6161;
+  background-image: linear-gradient(to right, #B13434 , #FF6161);
+  box-shadow: 0 5px 5px 0 grey;
+  padding: 150px 50px 0 100px;
+}
+
+.top-layer > div > p {
+  color: white;
+}
+
+.name {
+  font-size: 84px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-bottom: 32px;
+}
+
+.description p {
+  width: auto;
+  font-size: 32px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-right: .15em solid white;
+  overflow: hidden;
+  margin: 0 auto;
+  letter-spacing: .1em;
+  white-space: nowrap;
+  animation: 
+    typing 5s steps(40, end) infinite,
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+  
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+.mid-layer {
+  z-index: 1;
+  position: absolute;
+  width: calc(50% + 30px);
+  height: calc(100vh - 105px);
+  top: 0;
+  left: 0;
+  background-color: #FFBEBE;
+  box-shadow: 0 5px 4px 0 grey;
+}
+
+.profile-pic {
+  z-index: 0;
+  position: absolute;
+  width: 55%;
+  height: auto;
+  top: 0;
+  right: 0;
+  box-shadow: 0 5px 4px 0 grey;
+}
+
+.about-me {
+  background: white;
+}
+
+.about-me i {
+  font-size:48px;
+  color:#FF6161;
+}
+
+table {
+  max-width: 100%;
+  height: 750px;
+  margin: 50px 150px 120px 150px;
+}
+
+.left-column {
+  text-align: center;
+  font-size: 25px;
+  width: 300px;
+  height: auto;
+}
+
+.right-column {
+  width: auto;
+  height: auto;
+}
+
+.paragraph {
+  text-align: justify; 
+  text-justify: inter-word;
+}
+
+.short-text {
+  font-size:32px;
+}
+
+.resume {
+  width: 100%;
+  height: auto;
+  background: black;
+  color: white;
+  padding: 45px 0 100px 0;
+  box-shadow: 0 5px 5px grey;
+}
+
+.resume h1 {
+  width: 100%;
+  height: 180px;
+}
+
+.history {
+  margin: 0 0 150px 0;
+}
+
+.history div img {
+  z-index: 0;
+  width: 100%;
+  height: 400px;
+  transition: 0.5s;
+  position: relative;
+  border: 1px black solid;
+}
+
+.history div div {
+  z-index: 1;
+  width: 100%;
+  height: 400px;
+  padding: 50px 250px 30px 200px;
+  position: absolute;
+}
+
+.history h4 {
+  color: #FF6161;
+  font-size: 40px;
+}
+
+.history-left-side {
+  text-align: left;
+  transform: translateX(-3%);
+	opacity: 0;
+}
+
+.history-right-side {
+  text-align: right;
+  transform: translateX(3%);
+	opacity: 0;
+}
+
+.history div:hover > img {
+  filter: brightness(50%); 
+}
+
+.history div:hover > .history-left-side {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: .6s;
+}
+
+.history div:hover > .history-right-side {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: .6s;
+}
+
+.content {
+  padding: 0;
+  margin: 80px 0 100px 0;
+  width: 100%;
+  height: auto;
+}
+
+.content-block {
+  margin-top: 25px;
+  padding-top: 40px;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  background: rgb(255, 97, 97, 0.5);
+}
+
+.content-block div {
+  flex: 1;
+  text-align: center;
+}
+
+.content span {
+  font-size: 28px;
+  padding-left: 180px;
+}
+
+.content i {
+  font-size: 50px;
+  color:#ffffff;
+  margin-bottom: 10px;
+}
+
+.content img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.portfolio {
+  width: 100%;
+  height: auto;
+  padding: 45px 0 25px 0;
+  background: white;
+}
+
+.portfolio-content {
+  width: 100%;
+  height: 600px;
+  margin: 25px 0 75px 0;
+  background: #FFB5B5;
+  box-shadow: 0 3px 3px grey;
+  position: relative;
+}
+
+.portfolio-content i {
+  font-size: 60px;
+  color: gray;
+  position: absolute;
+}
+
+.left-button {
+  top: 270px;
+  left: 100px;
+}
+
+.right-button {
+  top: 270px;
+  right: 100px;
+}
