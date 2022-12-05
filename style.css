@@ -5,7 +5,7 @@ body {
 body h1 {
   font-size: 56px;
   font-family:Georgia, 'Times New Roman', Times, serif;
-  margin: 75px 0 50px 0;
+  margin: 35px 0 50px 0;
 }
 
 div h1 {
@@ -139,6 +139,8 @@ div h1 {
 
 .about-me {
   background: white;
+  padding-top: 45px;
+  padding-bottom: 35px;
 }
 
 .lock-key {
@@ -190,6 +192,7 @@ table i {
   background: black;
   color: white;
   padding: 45px 0 100px 0;
+  margin-bottom: 100px;
   box-shadow: 0 5px 5px grey;
 }
 
@@ -324,6 +327,34 @@ table i {
   position: absolute;
 }
 
+.certificates img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 520px;
+  width: 736px;
+  object-fit: contain;
+}
+
+.indicator-list {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  width: auto;
+  height: 12px;
+}
+
+.indicator {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px 0 6px;
+  border-radius: 50%;
+  background: gray;
+}
+
 .portfolio-content i:hover {
   color: #d6d6d6;
   cursor: pointer;
@@ -331,12 +362,12 @@ table i {
 
 .left-button {
   top: 270px;
-  left: 150px;
+  left: 200px;
 }
 
 .right-button {
   top: 270px;
-  right: 150px;
+  right: 200px;
 }
 
 .contact {

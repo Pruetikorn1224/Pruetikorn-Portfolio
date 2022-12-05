@@ -1,12 +1,5 @@
 $(document).ready(function() {
 
-    // var projectFiles = new Array();
-    // var certificateFiles = new Array();
-
-    var isAboutLocked = true;
-    var unhideAbout = '  <i class="fa-solid fa-lock-open lock-key"></i>';
-    var hideAbout = '  <i class="fa-solid fa-lock lock-key"></i>';
-
     $(".button-list > li").click(function() {
         var index =  $("li").index(this);
 
@@ -15,7 +8,7 @@ $(document).ready(function() {
                 $("html, body").animate({ scrollTop: 0 });
                 break;
             case 1:
-                $("html, body").animate({ scrollTop: 720 });
+                $("html, body").animate({ scrollTop: $(".about-me").offset().top });
                 break;
             case 2:
                 $("html, body").animate({ scrollTop: $(".resume").offset().top });
@@ -27,6 +20,10 @@ $(document).ready(function() {
                 alert("There is an error!");
         }
     });
+
+    var isAboutLocked = true;
+    const unhideAbout = '  <i class="fa-solid fa-lock-open lock-key"></i>';
+    const hideAbout = '  <i class="fa-solid fa-lock lock-key"></i>';
 
     $(".contact-button").click(function() {
         $("html, body").animate({ scrollTop: $(document).height() });
@@ -45,6 +42,49 @@ $(document).ready(function() {
             isAboutLocked = true;
         }
     })
+
+    var certificateFiles = [
+        '/Unity-Certified-User.png',
+        '/fortytwo.png',
+        '/depa3r.png',
+        '/startup.png',
+        '/build_on_asean.png',
+        '/cmkl.png',
+        '/kurume.png',
+        '/ielts_academic.png',
+        '/Ietls_UKVI.png'
+    ];
+    var certificateIndex = 0;
+    $(".certificates").append(`<img src="/images/certificates/${certificateFiles[certificateIndex]}">`);
+    for (var i = 0; i < certificateFiles.length; i++) {
+        $(".indicator-list").append('<div class="indicator"></div>')
+    }
+    $(".indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
+
+    $(".certificates > .right-button").click(function() {
+        $(".indicator-list").children().eq(certificateIndex).css("background", "gray");
+        $(".certificates > img").remove();
+        if (certificateIndex == certificateFiles.length - 1) {
+            certificateIndex = 0;
+        }
+        else {
+            certificateIndex++;
+        }
+        $(".indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
+        $(".certificates").append(`<img src="/images/certificates/${certificateFiles[certificateIndex]}">`);
+    });
+    $(".certificates > .left-button").click(function() {
+        $(".indicator-list").children().eq(certificateIndex).css("background", "gray");
+        $(".certificates > img").remove();
+        if (certificateIndex == 0) {
+            certificateIndex = certificateFiles.length - 1;
+        }
+        else {
+            certificateIndex--;
+        }
+        $(".indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
+        $(".certificates").append(`<img src="/images/certificates/${certificateFiles[certificateIndex]}">`);
+    });
 
     $(".facebook").click(function() {
         window.location = "https://www.facebook.com/preutikorn.chirattitikarn";
