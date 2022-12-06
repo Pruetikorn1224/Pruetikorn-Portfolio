@@ -1,0 +1,41 @@
+{
+    "name": "Project List",
+    "description": "This file stores list of project information to show in portfolio section",
+    "projects": [
+        {
+            "project": "3D Face Recognition",
+            "image": "/images/projects/face_recognition.png",
+            "paragraph1": "It is an artificial intelligence project for face recognition. Using Intel Realsense that can detect depth, it can distinguish between real face and photo. Its main purpose is preventing the fraud using photo for verification.",
+            "paragraph2": "It uses Python and face_recognition library. It detect depth of each point on face to classify between real face and photo.",
+            "link": "https://www.youtube.com/watch?v=R2DSdgRHJR8"
+        },
+        {
+            "project": "Hololive Virtual Museum",
+            "image": "/images/projects/hololive_museum.png",
+            "paragraph1": "Virtual musuem is a collection of digital video recording, audio, image, text document and other data that is represented historical, scientific, or cultural assets through electronic devices.",
+            "paragraph2": "This project shows the information of Hololive Idol Group's member. User can interact with models and it will show infoboard and video with model's sound.",
+            "link": "https://www.youtube.com/watch?v=6RZ9H4zcHLc"
+        },
+        {
+            "project": "Endless Runner Game: City Run",
+            "image": "/images/projects/endless_runner.png",
+            "paragraph1": "Endless runner is one of famous arcade games. The task is to dodge obstacles to survive longer and collect score continuously. There are many games of this type that are widely known, Subway Surf, Temple Run.",
+            "paragraph2": "It is developed with Unity game engine. Its concept is a man running away from a disaster in a city. It is a draft project for future project.",
+            "link": "https://play.unity.com/mg/other/city-run-v2"
+        },
+        {
+            "project": "AR Economy Presentation",
+            "image": "/images/projects/ar_economy.png",
+            "paragraph1": "Augmented Reality is a computer technology that generates digital content based on physical environment and can be interact through devices. It is widely used for navigation, presentation, game etc.",
+            "paragraph2": "This project use augmented reality technology to present the economy theory for managing money. It shows the ratio between area of house and workplace. and information of each area.",
+            "link": "https://drive.google.com/drive/folders/1kRkvsEQ1O3OI2lPIagGR8GDyEY5okxEA"
+        },
+        {
+            "project": "Automatic Cashier with Object Detection",
+            "image": "/images/projects/automatic_cashier.png",
+            "paragraph1": "The objective is to reduce time and cost for supermarket's customer. We got an inspiration from waiting queue at the cashier for a long time because the product is delivered manually. So, its concept is to process automatically.",
+            "paragraph2": "It uses PLC and sensors, and Raspberry pi to control conveyor and detect products with camera and calculate total price.",
+            "link": "https://drive.google.com/file/d/1m8yoHlEwHwO8JXqMBn-01JKNILCMq6oK/view"
+        }
+    ]
+}

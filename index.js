@@ -25,10 +25,6 @@ $(document).ready(function() {
     const unhideAbout = '  <i class="fa-solid fa-lock-open lock-key"></i>';
     const hideAbout = '  <i class="fa-solid fa-lock lock-key"></i>';
 
-    $(".contact-button").click(function() {
-        $("html, body").animate({ scrollTop: $(document).height() });
-    });
-
     $(".about-me > h1").click(function() {
         $(".about-me > h1 > i").remove();
         if(isAboutLocked) {
@@ -41,9 +37,10 @@ $(document).ready(function() {
             $("table").slideUp("slow");
             isAboutLocked = true;
         }
-    })
+    });
 
-    var certificateFiles = [
+    var certificateIndex = 0;
+    const certificateFiles = [
         '/Unity-Certified-User.png',
         '/fortytwo.png',
         '/depa3r.png',
@@ -54,15 +51,15 @@ $(document).ready(function() {
         '/ielts_academic.png',
         '/Ietls_UKVI.png'
     ];
-    var certificateIndex = 0;
+    
     $(".certificates").append(`<img src="/images/certificates/${certificateFiles[certificateIndex]}">`);
     for (var i = 0; i < certificateFiles.length; i++) {
-        $(".indicator-list").append('<div class="indicator"></div>')
+        $(".certificates > .indicator-list").append('<div class="indicator"></div>')
     }
-    $(".indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
+    $(".certificates > .indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
 
     $(".certificates > .right-button").click(function() {
-        $(".indicator-list").children().eq(certificateIndex).css("background", "gray");
+        $(".certificates > .indicator-list").children().eq(certificateIndex).css("background", "gray");
         $(".certificates > img").remove();
         if (certificateIndex == certificateFiles.length - 1) {
             certificateIndex = 0;
@@ -70,11 +67,11 @@ $(document).ready(function() {
         else {
             certificateIndex++;
         }
-        $(".indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
+        $(".certificates > .indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
         $(".certificates").append(`<img src="/images/certificates/${certificateFiles[certificateIndex]}">`);
     });
     $(".certificates > .left-button").click(function() {
-        $(".indicator-list").children().eq(certificateIndex).css("background", "gray");
+        $(".certificates > .indicator-list").children().eq(certificateIndex).css("background", "gray");
         $(".certificates > img").remove();
         if (certificateIndex == 0) {
             certificateIndex = certificateFiles.length - 1;
@@ -82,9 +79,71 @@ $(document).ready(function() {
         else {
             certificateIndex--;
         }
-        $(".indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
+        $(".certificates > .indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
         $(".certificates").append(`<img src="/images/certificates/${certificateFiles[certificateIndex]}">`);
     });
+
+    
+    var projectIndex = 0;
+    $.getJSON('/images/projects/projects.json', function(jd) {
+        const projectFiles = jd.projects;
+
+        createProjectCard(projectFiles[projectIndex]);
+
+        for (var i = 0; i < projectFiles.length; i++) {
+            $(".projects > .indicator-list").append('<div class="indicator"></div>')
+        }
+        $(".projects > .indicator-list").children().eq(certificateIndex).css("background", "#d6d6d6");
+    
+    }).fail(function(){
+        alert("An error has occurred.");
+    });
+
+    $(".projects > .right-button").click(function() {
+        $(".projects > .indicator-list").children().eq(projectIndex).css("background", "gray");
+        $(".project-card").remove();
+        $.getJSON('/images/projects/projects.json', function(jd) {
+            const projectFiles = jd.projects;
+
+            if (projectIndex == projectFiles.length - 1) {
+                projectIndex = 0;
+            }
+            else {
+                projectIndex++;
+            }
+            
+            $(".projects > .indicator-list").children().eq(projectIndex).css("background", "#d6d6d6");
+            createProjectCard(projectFiles[projectIndex]);
+        });
+    });
+    $(".projects > .left-button").click(function() {
+        $(".projects > .indicator-list").children().eq(projectIndex).css("background", "gray");
+        $(".project-card").remove();
+        $.getJSON('/images/projects/projects.json', function(jd) {
+            const projectFiles = jd.projects;
+
+            if (projectIndex == 0) {
+                projectIndex = projectFiles.length - 1;
+            }
+            else {
+                projectIndex--;
+            }
+            
+            $(".projects > .indicator-list").children().eq(projectIndex).css("background", "#d6d6d6");
+            createProjectCard(projectFiles[projectIndex]);
+        });
+    });
+
+    function createProjectCard(project) {
+        $(".projects").append('<div class="project-card"></div>');
+        $(".project-card").append(`<img src="${project.image}">`);
+        $(".project-card").append(`<div><h4><b>${project.project}</b></h4></div>`);
+        $(".project-card > div").append(`<p class="paragraph">${project.paragraph1}</p>`);
+        $(".project-card > div").append(`<p class="paragraph">${project.paragraph2}</p>`);
+        $(".project-card > div").append(`<a href="${project.link}" target="_blank" rel="noopener noreferrer">more information</a>`);
+    }
+
+
 
     $(".facebook").click(function() {
         window.location = "https://www.facebook.com/preutikorn.chirattitikarn";
@@ -110,3 +169,7 @@ $(document).ready(function() {
         console.log(window.location);
     });
 });
+
+function gotoBottom() {
+    $("html, body").animate({ scrollTop: $(document).height() });
+}

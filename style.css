@@ -12,6 +12,11 @@ div h1 {
   text-align: center;
 }
 
+.paragraph {
+  text-align: justify; 
+  text-justify: inter-word;
+}
+
 .navbar {
   z-index: 3;
   position: fixed;
@@ -91,7 +96,7 @@ div h1 {
   padding-bottom: 32px;
 }
 
-.description p {
+.slide-text p {
   width: auto;
   font-size: 32px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -175,11 +180,6 @@ table i {
 .right-column {
   width: auto;
   height: 150px;
-}
-
-.paragraph {
-  text-align: justify; 
-  text-justify: inter-word;
 }
 
 .short-text {
@@ -327,6 +327,44 @@ table i {
   position: absolute;
 }
 
+.project-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  height: 520px;
+  width: 1000px;
+  box-shadow: 5px 5px 4px grey;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-card img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  border-right: black solid 2px;
+}
+
+.project-card div {
+  padding: 35px;
+  height: 100%;
+  width: 50%;
+  left: 50%;
+}
+
+.project-card h4 {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.project-card p,
+.project-card a {
+  font-size: 20px;
+  padding-top: 5px;
+}
+
 .certificates img {
   position: absolute;
   top: 50%;
@@ -362,12 +400,12 @@ table i {
 
 .left-button {
   top: 270px;
-  left: 200px;
+  left: 150px;
 }
 
 .right-button {
   top: 270px;
-  right: 200px;
+  right: 150px;
 }
 
 .contact {
