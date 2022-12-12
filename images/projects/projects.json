@@ -32,7 +32,7 @@
         },
         {
             "project": "Automatic Cashier with Object Detection",
-            "image": "/images/projects/automatic_cashier.png",
+            "image": "/images/projects/automatic_cashier.jpg",
             "paragraph1": "The objective is to reduce time and cost for supermarket's customer. We got an inspiration from waiting queue at the cashier for a long time because the product is delivered manually. So, its concept is to process automatically.",
             "paragraph2": "It uses PLC and sensors, and Raspberry pi to control conveyor and detect products with camera and calculate total price.",
             "link": "https://drive.google.com/file/d/1m8yoHlEwHwO8JXqMBn-01JKNILCMq6oK/view?usp=sharing"
